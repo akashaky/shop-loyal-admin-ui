@@ -1,0 +1,29 @@
+/* component/navbar/Navbar.css */
+.custom-topbar-wrapper .Polaris-TopBar {
+    background-color: hsl(0, 0%, 97%) !important; /* blue */
+    color: white;
+    border-radius: 12px; /* 🎯 rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  }
+  .custom-topbar-wrapper .Polaris-Avatar {
+    background-color: #089e00 !important;
+    color: white;
+    border-radius: 50% !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 🟢 New: Set the user menu dropdown to white */
+  .Polaris-TopBar-Menu__Activator,
+  .Polaris-TopBar-UserMenu__Details,
+  .Polaris-ActionList,
+  .Polaris-Popover__Pane {
+    background-color: rgb(255, 249, 249) !important;
+    color: black !important;
+  }
+  
+  /* Optional: ensure text (name/email) is readable */
+  .Polaris-TopBar-UserMenu__Name,
+  .Polaris-TopBar-UserMenu__Detail {
+    color: black !important;
+  }
+
