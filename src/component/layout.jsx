@@ -54,6 +54,11 @@ function Layout({ children }) {
 					  icon: ShareIcon,
 					  url: "/widget",
 					},
+					{
+					  label: "Analytics",
+					  icon: ShareIcon,
+					  url: "/analytics",
+					},
 				  ]}
 				  secondaryNavigation={[
 					{
