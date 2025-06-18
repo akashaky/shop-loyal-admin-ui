@@ -1,17 +1,19 @@
 // src/component/layout/Layout.jsx
 import { useState, useCallback } from "react";
 import { Frame, Navigation } from "@shopify/polaris";
+import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
+import './Navbar.css'
 import {
 	HomeIcon,
 	ShareIcon,
-	GiftCardFilledIcon,
 	ChartPopularIcon,
 	SettingsFilledIcon,
 } from "@shopify/polaris-icons";
 
 function Layout({ children }) {
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
+	const location = useLocation();
 
 	const toggleMobileNav = useCallback(
 		() => setMobileNavOpen((open) => !open),
@@ -28,13 +30,19 @@ function Layout({ children }) {
 
 	// 🧭 Sidebar navigation
 	const navigationMarkup = (
-		<Navigation location="/">
+		<Navigation location={location.pathname}>
 			<Navigation.Section
 			      items={[
 					{
 					  label: "Home",
 					  icon: HomeIcon,
 					  url: "/",
+					  exactMatch: true
+					},
+					{
+					  label: "Earn & Redeem",
+					  icon: ChartPopularIcon,
+					  url: "/earn-redeem",
 					},
 					{
 					  label: "Referrals",
@@ -42,14 +50,9 @@ function Layout({ children }) {
 					  url: "/referrals",
 					},
 					{
-					  label: "Rewards",
-					  icon: ChartPopularIcon,
-					  url: "/rewards",
-					},
-					{
-					  label: "Customers",
-					  icon: GiftCardFilledIcon,
-					  url: "/customers",
+					  label: "Widget",
+					  icon: ShareIcon,
+					  url: "/widget",
 					},
 				  ]}
 				  secondaryNavigation={[

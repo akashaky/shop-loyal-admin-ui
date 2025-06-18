@@ -1,5 +1,4 @@
-// component/navbar/Navbar.jsx
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { TopBar } from "@shopify/polaris";
 import "./Navbar.css"; // 👈 Import custom CSS
 import { useContext } from "react";
@@ -17,9 +16,9 @@ function Navbar({ onToggleMobileNav }) {
 	const userMenuMarkup = (
 		<TopBar.UserMenu
 			actions={[{ items: [{ content: "Logout" }] }]}
-			name={user?.firstName + " " + user?.lastName ?? ""}
+			name={user?.firstName || "" +  user?.lastName || ""}
 			detail={user?.email}
-			initials={user?.firstName[0] ?? "" + user?.lastName[0] ?? ""}
+			initials={user?.firstName?.[0] || "" + user?.lastName?.[0] || ""}
 			open={isUserMenuOpen}
 			onToggle={toggleUserMenu}
 		/>
